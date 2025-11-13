@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Bilan suivi hebdo</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+body {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'SUSE Mono', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+    margin-bottom: 50px;
+}
+#content img {
+    width: 60px;
+    margin: 0 20px;
+}
+section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5px auto;
+}
+.tableau-titre {
+    width: 30%;
+    border: 1px solid black;    
+    font-size: 12px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.tableau {
+    width: 30%;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+.answer, .observation {
+    width: 90%;
+    height: 80%;
+    font-size: 12px;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+label img {
+  width: 100px;
+
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+}
+label.focused img {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px 5px rgba(0,0,0,0.5);
+}
+.redaction {
+    justify-content: center;
+    margin-top: 20px;
+}
+.rectangle {
+    padding: 8px 15px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+h1, h2 {
+    color: rgb(214, 76, 76);
+}
+i {
+    font-size: 50px;
+}
+</style>
+</head>
+<body>
+<div id="content">
+    <br>
+    <h1>Bilan suivi hebdo</h1>
+    <div>Antenne : La Rochelle</div>
+    <hr>
+    <br>
+
+    <div style="display:flex; flex-wrap: wrap; justify-content: center; gap:20px; font-size:12px;">
+        
+        <div>Intitulé de la formation :
+            <select style="height:25px; font-size:12px;">
+                <option>Développeur web / web mobile</option>
+                <option>Accompagnant Educatif Petite Enfance</option>
+                <option>Secrétaire Assistant(e) Médico-Social(e)</option>
+                <option>Accompagnant(e) éducatif(ve) et social(e)</option>
+                <option>Secrétaire Assistant(e)</option>
+                <option>Conseiller(ère) Funéraire</option>
+                <option>Action préparatoire aux métiers du sanitaire et social</option>
+                <option>Amorce De Parcours</option>
+                <option>Concepteur développeur d’applications</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div style="display:flex; flex-wrap: wrap; justify-content: center; gap:20px; font-size:12px;">
+        <div>Début : <input type="date" value="2025-09-22" style="height:25px; font-size:12px;"></div>
+        <div>Fin : <input type="date" value="2026-06-18" style="height:25px; font-size:12px;"></div>
+    </div>
+    <br>
+    <div style="display:flex; flex-wrap: wrap; justify-content: center; gap:20px; font-size:12px;">
+        <div>Lieu : La Rochelle</div>
+    </div>
+    <br>
+
+
+    <div style="margin-top:10px;">
+        <h2>Climat général de cette semaine :</h2>
+        <br>
+        <div>
+          <input type="checkbox" class="image" id="img-1">
+            <label><i class="fa-solid fa-cloud-bolt"></i></label>
+
+            <input type="checkbox" class="image" id="img-2">
+            <label><i class="fa-solid fa-cloud"></i></label>
+
+            <input type="checkbox" class="image" id="img-3">
+            <label><i class="fa-solid fa-cloud-sun"></i></label>
+
+            <input type="checkbox" class="image" id="img-4">
+            <label><i class="fa-regular fa-sun"></i></label>
+        </div>
+        <br>
+        <p style="font-size:12px; margin-top:5px;">Suite à vos échanges, vous avez, si nécessaire, à nous faire part des remarques ou demandes.</p>
+    </div>
+    <br>
+
+
+    <section>
+        <div class="tableau-titre">Thème</div>
+        <div class="tableau-titre">Vos notes</div>
+        <div class="tableau-titre">Priorité</div>
+    </section>
+
+    <section>
+        <div class="tableau">L'organisation de la Formation</div>
+        <div class="tableau"><input class="answer" type="text"></div>
+        <div class="tableau"><input class="answer" type="text"></div>
+    </section>
+
+    <section>
+        <div class="tableau">Le / Les Formateur(s)</div>
+        <div class="tableau"><input class="answer" type="text"></div>
+        <div class="tableau"><input class="answer" type="text"></div>
+    </section>
+
+    <section>
+        <div class="tableau">Les moyens matériels</div>
+        <div class="tableau"><input class="answer" type="text"></div>
+        <div class="tableau"><input class="answer" type="text"></div>
+    </section>
+
+    <section>
+        <div class="tableau">Les locaux (hygiène, sécurité..)</div>
+        <div class="tableau"><input class="answer" type="text"></div>
+        <div class="tableau"><input class="answer" type="text"></div>
+    </section>
+
+    <section>
+        <div class="tableau">Autres</div>
+        <div class="tableau"><input class="answer" type="text"></div>
+        <div class="tableau"><input class="answer" type="text"></div>
+    </section>
+    <br>
+
+    <section>
+        <div class="tableau-observation">
+            <span>Observations complémentaires :</span>
+            <input class="observation" type="text">
+        </div>
+    </section>
+    <br>
+
+    <div class="redaction">
+        <div style="display:flex; justify-content:center; gap:30px; font-size:12px;">
+            <div>Rédigé le : <input type="date" style="height:25px; font-size:12px;"></div>
+            <div>Par : 
+                <select style="height:25px; font-size:12px;">
+                    <option>Choisir...</option>
+                    <option>Cassandra</option>
+                    <option>Doriane</option>
+                    <option>Abir</option>
+                    <option>Hadrien</option>
+                    <option>Murtaza</option>
+                    <option>Kylian</option>
+                    <option>Loïc</option>
+                    <option>Faiz</option>
+                    <option>Kevin</option>
+                    <option>Jerémy</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button style="margin-top:50px;" class="rectangle" id="download">Enregistrer</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("download").addEventListener("click", () => {
+    const element = document.getElementById("content");
+    const opt = {
+        margin: [0.2,0.2,0.2,0.2],
+        filename: 'bilan_meteo.pdf',
+        html2canvas: { scale: 2, scrollY: 0 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+        html2pdf().set(opt).from(element).save();
+    });
+
+     const checkboxes = document.querySelectorAll('input.image');
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('click', () => {
+                if (cb.checked) {
+                checkboxes.forEach(other => {
+                    if (other !== cb) {
+                    other.checked = false;
+                    other.nextElementSibling.classList.remove('focused');
+                    }
+                });
+                cb.nextElementSibling.classList.add('focused');
+                } else {
+                    cb.nextElementSibling.classList.remove('focused');
+                }
+            });
+        });
+</script>
+</body>
+</html>
