@@ -33,23 +33,32 @@ section {
     padding: 3px;
     box-sizing: border-box;
 }
+.answer, .observation {
+    width: 90%;
+    height: 60px; /* hauteur par défaut */
+    font-size: 12px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    resize: vertical; /* permet de redimensionner verticalement */
+    overflow-y: auto; /* scroll si texte dépasse */
+}
 .tableau {
     width: 30%;
-    height: 50px;
+    min-height: 70px; /* augmente la hauteur pour textarea */
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
     box-sizing: border-box;
+    padding: 5px;
 }
-.answer, .observation {
-    width: 90%;
-    height: 80%;
-    font-size: 12px;
-    padding: 2px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
+.tableau-observation {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 label img {
   width: 100px;
@@ -144,48 +153,48 @@ i {
 
 
     <section>
-        <div class="tableau-titre">Thème</div>
-        <div class="tableau-titre">Vos notes</div>
-        <div class="tableau-titre">Priorité</div>
-    </section>
+    <div class="tableau-titre">Thème</div>
+    <div class="tableau-titre">Vos notes</div>
+    <div class="tableau-titre">Priorité</div>
+</section>
 
-    <section>
-        <div class="tableau">L'organisation de la Formation</div>
-        <div class="tableau"><input class="answer" type="text"></div>
-        <div class="tableau"><input class="answer" type="text"></div>
-    </section>
+<section>
+    <div class="tableau">L'organisation de la Formation</div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+</section>
 
-    <section>
-        <div class="tableau">Le / Les Formateur(s)</div>
-        <div class="tableau"><input class="answer" type="text"></div>
-        <div class="tableau"><input class="answer" type="text"></div>
-    </section>
+<section>
+    <div class="tableau">Le / Les Formateur(s)</div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+</section>
 
-    <section>
-        <div class="tableau">Les moyens matériels</div>
-        <div class="tableau"><input class="answer" type="text"></div>
-        <div class="tableau"><input class="answer" type="text"></div>
-    </section>
+<section>
+    <div class="tableau">Les moyens matériels</div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+</section>
 
-    <section>
-        <div class="tableau">Les locaux (hygiène, sécurité..)</div>
-        <div class="tableau"><input class="answer" type="text"></div>
-        <div class="tableau"><input class="answer" type="text"></div>
-    </section>
+<section>
+    <div class="tableau">Les locaux (hygiène, sécurité..)</div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+</section>
 
-    <section>
-        <div class="tableau">Autres</div>
-        <div class="tableau"><input class="answer" type="text"></div>
-        <div class="tableau"><input class="answer" type="text"></div>
-    </section>
+<section>
+    <div class="tableau">Autres</div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+    <div class="tableau"><textarea class="answer"></textarea></div>
+</section>
+
+<section>
+    <div class="tableau-observation">
+        <span>Observations complémentaires :</span>
+        <textarea class="observation"></textarea>
+    </div>
+</section>
     <br>
-
-    <section>
-        <div class="tableau-observation">
-            <span>Observations complémentaires :</span>
-            <input class="observation" type="text">
-        </div>
-    </section>
     <br>
 
     <div class="redaction">
